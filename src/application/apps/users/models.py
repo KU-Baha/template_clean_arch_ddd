@@ -1,23 +1,31 @@
-from sqlmodel import Field
+from sqlalchemy import Column, String, Boolean
+from sqlalchemy.orm import Mapped, mapped_column
 
 from application.apps.base.models import BaseORM
 
 
-class UserORM(BaseORM, table=True):
-    name: str = Field(
+class UserORM(BaseORM):
+    __tablename__ = 'user'
+
+    name: Mapped[str] = mapped_column(
+        String,
         nullable=False
     )
-    email: str = Field(
+    email: Mapped[str] = mapped_column(
+        String,
         nullable=False,
         unique=True
     )
-    phone_number: str = Field(
+    phone_number: Mapped[str] = mapped_column(
+        String,
         nullable=False,
         unique=True
     )
-    password: str = Field(
+    password: Mapped[str] = mapped_column(
+        String,
         nullable=False
     )
-    is_active: bool = Field(
+    is_active: Mapped[bool] = mapped_column(
+        Boolean,
         default=True
     )

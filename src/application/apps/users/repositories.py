@@ -1,7 +1,6 @@
 from datetime import datetime
 
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlmodel import select
 
 from application.apps.users.models import UserORM
 from domain.user.entities import CreateUser

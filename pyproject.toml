@@ -15,7 +15,8 @@ dependency-injector = "^4.41.0"
 alembic = "^1.13.1"
 asyncpg = "^0.29.0"
 pyjwt = {extras = ["crypto"], version = "^2.8.0"}
-sqlmodel = "^0.0.18"
+pydantic = "^2.7.2"
+sqlalchemy = "^2.0.30"
 
 
 [tool.poetry.group.dev.dependencies]

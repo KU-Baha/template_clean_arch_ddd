@@ -1,21 +1,37 @@
 from datetime import datetime
 from typing import Optional
 
-from sqlmodel import Field, SQLModel
+from sqlalchemy import DateTime, Integer, MetaData
+from sqlalchemy.ext.declarative import as_declarative, declared_attr
+from sqlalchemy.orm import Mapped, mapped_column
 
 
-class BaseORM(SQLModel):
-    id: Optional[int] = Field(
-        default=None,
-        primary_key=True
+@as_declarative()
+class Base:
+    metadata: MetaData
+
+    @declared_attr
+    def __tablename__(cls) -> str:
+        return cls.__name__.lower()
+
+
+class BaseORM(Base):
+    __abstract__ = True
+
+    id: Mapped[int | None] = mapped_column(
+        Integer,
+        primary_key=True,
+        index=True
     )
-    created_at: datetime = Field(
-        default_factory=datetime.utcnow
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime,
+        default=datetime.utcnow
     )
-    updated_at: datetime = Field(
-        default_factory=datetime.utcnow
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime,
+        default=datetime.utcnow
     )
-    deleted_at: Optional[datetime] = Field(
-        default=None,
+    deleted_at: Mapped[Optional[datetime]] = mapped_column(
+        DateTime,
         nullable=True
     )
