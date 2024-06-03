@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "template-ca-ddd"
+version = "0.1.0"
+description = "Architecture template. (Clean Architecture + DDD)"
+authors = ["ku-baha <kulbarakovbh@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.111.0"
+celery = "^5.4.0"
+pydantic-settings = "^2.2.1"
+uvicorn = "^0.30.0"
+dependency-injector = "^4.41.0"
+alembic = "^1.13.1"
+asyncpg = "^0.29.0"
+pyjwt = {extras = ["crypto"], version = "^2.8.0"}
+sqlmodel = "^0.0.18"
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.7.1"
+pytest = "^8.2.1"
+aiosqlite = "^0.20.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
