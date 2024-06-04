@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import TypeVar
 
-from domain.user.entities import CreateUser, User
+from domain.user.dto import CreateUser, User
 
 model = TypeVar('model')
 

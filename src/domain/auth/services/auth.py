@@ -4,7 +4,7 @@ from domain.auth.entities import Token
 from domain.auth.repositories import IAuthRepository
 from domain.auth.services.jwt_service import JWTService
 from domain.base.service import BaseService
-from domain.user.entities import CreateUser
+from domain.user.dto import CreateUser
 from domain.user.services import UserService
 
 

@@ -1,6 +1,6 @@
-from application.apps.users.models import UserORM
+from application.users import UserORM
 from domain.base.service import BaseService
-from domain.user.entities import CreateUser
+from domain.user.dto import CreateUser
 from domain.user.repositories import IUserRepository
 
 

@@ -2,8 +2,8 @@ from datetime import datetime
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from application.apps.users.models import UserORM
-from domain.user.entities import CreateUser
+from application.users.models import UserORM
+from domain.user.dto import CreateUser
 from domain.user.exceptions import UserNotFoundException
 from domain.user.repositories import IUserRepository
 

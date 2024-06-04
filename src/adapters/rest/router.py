@@ -1,5 +1,5 @@
-from application.apps.auth.controllers import auth_router
-from application.apps.users.controllers import user_router
+from application.auth.controllers import auth_router
+from application.users.controllers import user_router
 
 
 def add_routes(app):

@@ -3,7 +3,7 @@ from gettext import gettext
 from dependency_injector import containers, providers
 
 from adapters.db.sessions import get_async_session
-from application.apps.users.repositories import UserRepository
+from application.users import UserRepository
 from domain.user.services import UserService
 
 
