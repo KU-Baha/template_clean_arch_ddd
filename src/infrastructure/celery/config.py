@@ -8,7 +8,7 @@
 #         'my_project',
 #         broker=settings.CELERY_BROKER_URL,
 #         backend=settings.CELERY_RESULT_BACKEND,
-#         include=['adapters.celery.tasks']
+#         include=['infrastructure.celery.tasks']
 #     )
 #
 #     celery.conf.update(
