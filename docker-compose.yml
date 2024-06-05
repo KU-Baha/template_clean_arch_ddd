@@ -2,17 +2,17 @@ version: '3.8'
 
 services:
 
-  web:
+  backend:
     build:
       context: .
       dockerfile: docker/Dockerfile
-    command: uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
+    command: /start.sh
     volumes:
       - ./src:/app
     ports:
       - 80:8000
-    environment:
-      - ./.env
+    env_file:
+      - src/.env
     depends_on:
       - db
 
@@ -20,5 +20,13 @@ services:
     image: postgres:15.3
     expose:
       - 5432
-    environment:
-      - ./.env
+    env_file:
+      - src/.env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+
+volumes:
+  postgres_data:
+
+
