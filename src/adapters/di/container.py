@@ -3,7 +3,7 @@ from gettext import gettext
 from dependency_injector import containers, providers
 
 from adapters.db.sessions import get_async_session
-from application.users import UserRepository
+from application.users.repositories import UserRepository
 from domain.user.services import UserService
 
 
@@ -13,7 +13,7 @@ class SessionContainer(containers.DeclarativeContainer):
 
 class Container(containers.DeclarativeContainer):
     wiring_config = containers.WiringConfiguration(modules=[
-        "application.apps.users.controllers",
+        "application.users.controllers",
     ])
 
     config = providers.Configuration(yaml_files=["config.yml"])

@@ -23,6 +23,9 @@ class User(BaseUser):
     )
     deleted_at: datetime | None = None
 
+    class Config:
+        from_attributes = True
+
 
 class CreateUser(BaseUser):
     password: str
