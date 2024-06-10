@@ -10,11 +10,11 @@ from domain.user.services import UserService
 
 class AuthService(BaseService, JWTService):
     def __init__(
-            self,
-            auth_repository: IAuthRepository,
-            user_service: UserService,
-            *args,
-            **kwargs
+        self,
+        auth_repository: IAuthRepository,
+        user_service: UserService,
+        *args,
+        **kwargs
     ):
         self._auth_repository = auth_repository
         self._user_service = user_service
