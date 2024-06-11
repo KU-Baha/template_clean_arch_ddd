@@ -13,7 +13,6 @@ from domain.utils.auth import send_access_req
 
 class AuthMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next: RequestResponseEndpoint) -> Response:
-        raise Exception("Not implemented")
         if request.url.path.startswith("/api/v1/"):
             auth_header = request.headers.get("Authorization")
             service = request.url.path.split("/")[3]
