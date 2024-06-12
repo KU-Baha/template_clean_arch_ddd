@@ -7,7 +7,7 @@ from starlette.middleware.base import RequestResponseEndpoint
 from starlette.responses import Response
 
 from application.config import settings
-from domain.base.exception import BusinessException
+from application.base.exception import BusinessException
 from domain.utils.auth import send_access_req
 
 

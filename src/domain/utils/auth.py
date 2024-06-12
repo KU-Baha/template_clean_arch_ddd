@@ -5,7 +5,7 @@ from gettext import gettext
 
 import requests
 
-from domain.base.exception import BusinessException
+from application.base.exception import BusinessException
 
 
 def send_access_req(

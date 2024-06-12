@@ -1,4 +1,4 @@
-from domain.base.exception import BusinessException
+from application.base.exception import BusinessException
 
 
 class UserNotFoundException(BusinessException):

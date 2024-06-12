@@ -5,7 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from application.users.models import UserORM
 from domain.user.dto import CreateUser
-from domain.user.exceptions import UserNotFoundException
+from application.users.exceptions import UserNotFoundException
 from domain.user.repositories import IUserRepository
 
 
