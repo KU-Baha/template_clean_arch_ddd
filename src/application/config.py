@@ -33,18 +33,6 @@ class Settings(BaseSettings):
         extra = "ignore"
 
 
-class JWTSettings(BaseSettings):
-    SECRET_KEY: str
-    ACCESS_TOKEN_EXPIRE: int
-    REFRESH_TOKEN_EXPIRE: int
-    ALGORITHM: str
-
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
-        extra = "ignore"
-
-
 class CORSConfig:
     ALLOW_ORIGINS: list[str] = ["*"]
     ALLOW_METHODS: list[str] = ["*"]
@@ -58,5 +46,4 @@ class CORSConfig:
 
 
 settings = Settings()
-jwt_settings = JWTSettings()
 cors_config = CORSConfig()
