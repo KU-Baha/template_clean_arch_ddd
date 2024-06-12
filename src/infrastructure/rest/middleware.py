@@ -1,8 +1,10 @@
+from prometheus_client import CollectorRegistry
 from starlette.middleware.cors import CORSMiddleware
 
 from application.config import cors_config
 from infrastructure.rest.middlewares.auth import AuthMiddleware
 from infrastructure.rest.middlewares.exception import ExceptionHandlingMiddleware
+from infrastructure.rest.middlewares.prometheus import MetricsMiddleware
 
 
 def add_middlewares(app):
@@ -14,5 +16,6 @@ def add_middlewares(app):
         allow_headers=cors_config.ALLOW_HEADERS,
     )
     app.add_middleware(AuthMiddleware)
+    app.add_middleware(MetricsMiddleware)
     app.add_middleware(ExceptionHandlingMiddleware)
     return app

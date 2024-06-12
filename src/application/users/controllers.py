@@ -3,7 +3,6 @@ from fastapi import APIRouter, Depends
 from pydantic import EmailStr
 
 from infrastructure.di.container import Container
-from application.users.models import UserORM
 from domain.user.dto import CreateUser, User
 from domain.user.services import UserService
 
